@@ -11,7 +11,9 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 # DEBUG = False
 
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-ALLOWED_HOSTS = ['localhost', '158.160.222.87', '127.0.0.1', 'orlm82.ddns.net']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '')
+ALLOWED_HOSTS = ALLOWED_HOSTS.split(',') if ALLOWED_HOSTS else []
+# ALLOWED_HOSTS = ['localhost', '158.160.222.87', '127.0.0.1', 'orlm82.ddns.net']
 
 
 # Application definition
